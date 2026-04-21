@@ -25,10 +25,6 @@ target_os:
 services:
   - LDAP
   - Kerberos
-ports:
-  - "389"
-  - "88"
-  - "445"
 items:
   - Username
   - Password

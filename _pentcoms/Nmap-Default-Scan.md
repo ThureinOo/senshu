@@ -15,10 +15,6 @@ services:
   - HTTP
   - SSH
   - SMB
-ports:
-  - "80"
-  - "22"
-  - "445"
 items:
   - No_Creds
 techniques: []

@@ -22,12 +22,10 @@ target_os:
   - Linux
   - Windows
 services: []
-ports: []
 items:
   - Shell
 techniques:
-  - Port_Forwarding
-  - Tunneling
+  - Pivoting_Tunneling
 network_position:
   - Internal
   - Local

@@ -18,7 +18,6 @@ phase:
 target_os:
   - Windows
 services: []
-ports: []
 items:
   - Shell
 techniques:

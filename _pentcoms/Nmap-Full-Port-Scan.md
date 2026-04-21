@@ -12,7 +12,6 @@ target_os:
   - Linux
   - Windows
 services: []
-ports: []
 items:
   - No_Creds
 techniques: []

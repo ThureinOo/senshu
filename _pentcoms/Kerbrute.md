@@ -1,7 +1,7 @@
 ---
 description: |
   Enumerate valid AD usernames and perform password spraying
-  via Kerberos pre-authentication (fast, doesn't trigger lockout policies as easily).
+  via Kerberos pre-authentication.
 
   Reference values:
     Target DC: 10.10.10.1
@@ -22,14 +22,11 @@ target_os:
   - Windows
 services:
   - Kerberos
-ports:
-  - "88"
 items:
   - No_Creds
   - Username
 techniques:
   - Password_Spraying
-  - Brute_Force
 network_position:
   - Internal
 references:

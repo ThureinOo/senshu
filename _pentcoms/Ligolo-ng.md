@@ -24,12 +24,10 @@ target_os:
   - Linux
   - Windows
 services: []
-ports: []
 items:
   - Shell
 techniques:
-  - Pivoting
-  - Tunneling
+  - Pivoting_Tunneling
 network_position:
   - Internal
 references:

@@ -27,9 +27,6 @@ target_os:
   - Windows
 services:
   - SMB
-ports:
-  - "445"
-  - "139"
 items:
   - Username
   - Password

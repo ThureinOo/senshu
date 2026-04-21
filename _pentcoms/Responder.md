@@ -18,13 +18,10 @@ target_os:
 services:
   - NTLM
   - SMB
-ports:
-  - "445"
-  - "139"
 items:
   - No_Creds
 techniques:
-  - LLMNR_Poisoning
+  - NTLM_Relay_Poisoning
 network_position:
   - Internal
 references:

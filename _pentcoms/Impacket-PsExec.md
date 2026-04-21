@@ -21,15 +21,12 @@ target_os:
   - Windows
 services:
   - SMB
-ports:
-  - "445"
-  - "135"
 items:
   - Username
   - Password
   - Hash
 techniques:
-  - Pass-the-Hash
+  - Pass-the-Hash_Ticket
 network_position:
   - Internal
 references:

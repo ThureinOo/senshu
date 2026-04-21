@@ -19,10 +19,6 @@ target_os:
 services:
   - SMB
   - RPC
-ports:
-  - "445"
-  - "139"
-  - "135"
 items:
   - No_Creds
   - Username

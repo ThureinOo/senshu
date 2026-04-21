@@ -25,17 +25,13 @@ target_os:
 services:
   - LDAP
   - RPC
-ports:
-  - "389"
-  - "135"
-  - "445"
 items:
   - Username
   - Password
   - Hash
 techniques:
   - DCSync
-  - Pass-the-Hash
+  - Pass-the-Hash_Ticket
 network_position:
   - Internal
 references:

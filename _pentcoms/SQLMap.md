@@ -23,14 +23,10 @@ target_os:
   - Windows
 services:
   - HTTP
-ports:
-  - "80"
-  - "443"
-  - "8080"
 items:
   - No_Creds
 techniques:
-  - SQLi
+  - Web_Injection
 network_position:
   - External
   - Internal

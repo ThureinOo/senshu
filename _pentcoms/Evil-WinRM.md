@@ -20,14 +20,12 @@ target_os:
   - Windows
 services:
   - WinRM
-ports:
-  - "5985"
 items:
   - Username
   - Password
   - Hash
 techniques:
-  - Pass-the-Hash
+  - Pass-the-Hash_Ticket
 network_position:
   - Internal
 references:
