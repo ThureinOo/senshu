@@ -1,62 +1,83 @@
 ---
 layout: page
-title: Contributing
+title: Contribute
 ---
 
 ## How to Contribute
 
-PentComs is open source and community-driven. To add a new command:
+Senshu is open source and welcomes contributions from the security community. To add a new command, follow these steps:
 
-### 1. Create a new file
+### 1. Fork the repository
 
-Add a `.md` file in `_pentcoms/` named after the tool (e.g., `Impacket-PsExec.md`).
+Fork [Senshu on GitHub](https://github.com/ThureinOo/senshu) and clone it locally.
 
-### 2. Use this YAML template
+### 2. Create a new file
+
+Add a `.md` file in the `_pentcoms/` directory. Name it after the tool, using hyphens for spaces (e.g., `Impacket-PsExec.md`).
+
+### 3. Use the following YAML front matter format
+
+Each entry is a Markdown file that contains **only YAML front matter** (no body content). Here is the template:
 
 ```yaml
 ---
 description: |
-  Brief description of what the tool/command does.
+  Brief description of what the tool/command does and when to use it.
 
   Reference values:
     Target IP: 10.10.10.1
     Domain: test.local
-    Username: john
-    Password: password123
+    Username: pentuser
+    Password: P@ssw0rd123
 command: |
-  your-command-here 10.10.10.1
+  your-command-here
 phase:
-  - Enumeration          # Recon, Scanning, Enumeration, Exploitation,
-                         # Post-Exploitation, PrivEsc, Lateral_Movement,
-                         # Persistence, Exfiltration
+  - Enumeration
 target_os:
-  - Windows              # Linux, Windows, macOS
+  - Windows
 services:
-  - SMB                  # SMB, HTTP, SSH, FTP, DNS, LDAP, Kerberos,
-                         # RDP, WinRM, MSSQL, MySQL, SNMP, SMTP, RPC,
-                         # NFS, WMI, DCOM, NTLM, VNC, Redis, PostgreSQL
-ports:
-  - "445"                # Always quote port numbers
+  - SMB
 items:
-  - Username             # No_Creds, Username, Password, Hash, TGT, TGS,
-  - Password             # Certificate, Shell, Key, Token, SPN
+  - Username
+  - Password
 techniques:
-  - Pass-the-Hash        # See _data/techniques.yml for full list
+  - Kerberoasting
 network_position:
-  - Internal             # External, Internal, Local
+  - Internal
 references:
-  - https://example.com
+  - https://github.com/example/tool
 ---
 ```
 
-### 3. Guidelines
+### 4. Valid values for each field
 
-- Use **placeholder values** consistently: `john`, `password123`, `test.local`, `10.10.10.1`
+**Phase:**
+`Recon`, `Scanning`, `Enumeration`, `Exploitation`, `Post-Exploitation`, `PrivEsc`, `Lateral_Movement`, `Persistence`, `Exfiltration`
+
+**Target OS:**
+`Linux`, `Windows`, `macOS`
+
+**Services:**
+`SMB`, `HTTP`, `SSH`, `FTP`, `DNS`, `LDAP`, `Kerberos`, `RDP`, `WinRM`, `MSSQL`, `MySQL`, `SNMP`, `SMTP`, `RPC`, `NFS`, `WMI`, `DCOM`, `NTLM`, `VNC`, `Redis`, `PostgreSQL`
+
+**Items (What you have):**
+`No_Creds`, `Username`, `Password`, `Hash`, `TGT`, `TGS`, `Certificate`, `Shell`, `Key`, `Token`, `SPN`
+
+**Techniques:**
+`Kerberoasting`, `AS-REP_Roasting`, `Pass-the-Hash_Ticket`, `Ticket_Forgery`, `DCSync`, `NTLM_Relay_Poisoning`, `BloodHound`, `Password_Spraying`, `Delegation_Abuse`, `ACL_Abuse`, `ADCS_Abuse`, `Shadow_Credentials`, `Web_Injection`, `Web_File_Attack`, `Deserialization`, `Reverse_Shell`, `Pivoting_Tunneling`, `Token_Impersonation`, `Linux_Misconfig`, `Kernel_Exploit`
+
+**Network Position:**
+`External`, `Internal`, `Local`
+
+### 5. Guidelines
+
+- Use **placeholder values** consistently: `pentuser`, `P@ssw0rd123`, `test.local`, `10.10.10.1` (attacker: `10.10.14.1`)
 - Commands should be **verified and working**
-- Include **multiple variants** where useful (e.g., with password vs with hash)
-- Include a **download/reference link**
-- Port numbers must be **quoted strings** (e.g., `"445"` not `445`)
+- Include **multiple variants** where useful (e.g., with password vs. with hash)
+- Include at least one **reference link** (tool repository or documentation)
+- Use empty arrays `[]` for fields that don't apply (e.g., `techniques: []`)
+- Each PR should include **one command entry** for easier review
 
-### 4. Submit a Pull Request
+### 6. Submit a Pull Request
 
-Fork the repo, add your entry, and submit a PR. CI will validate your YAML syntax.
+Push your changes and submit a PR to the main repository. Provide a brief description of the tool and why it's useful for pentesters.

@@ -4,23 +4,23 @@ description: |
 
   Reference values:
     Target IP: 10.10.10.1
-    Username: john
-    Password: password123
+    Username: pentuser
+    Password: P@ssw0rd123
 command: |
   # List shares (no creds)
   smbclient -L //10.10.10.1 -N
 
   # List shares (with creds)
-  smbclient -L //10.10.10.1 -U john%password123
+  smbclient -L //10.10.10.1 -U pentuser%P@ssw0rd123
 
   # Connect to a share
-  smbclient //10.10.10.1/share -U john%password123
+  smbclient //10.10.10.1/share -U pentuser%P@ssw0rd123
 
   # Download all files recursively
-  smbclient //10.10.10.1/share -U john%password123 -c "recurse ON; prompt OFF; mget *"
+  smbclient //10.10.10.1/share -U pentuser%P@ssw0rd123 -c "recurse ON; prompt OFF; mget *"
 
   # smbmap alternative
-  smbmap -H 10.10.10.1 -u john -p password123
+  smbmap -H 10.10.10.1 -u pentuser -p P@ssw0rd123
 phase:
   - Enumeration
 target_os:

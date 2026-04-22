@@ -10,7 +10,7 @@ command: |
   enum4linux-ng 10.10.10.1 -A
 
   # With credentials
-  enum4linux-ng 10.10.10.1 -u john -p 'password123' -A
+  enum4linux-ng 10.10.10.1 -u pentuser -p 'P@ssw0rd123' -A
 phase:
   - Enumeration
 target_os:

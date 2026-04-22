@@ -5,7 +5,7 @@ description: |
 command: |
   # Current user info
   whoami /all
-  net user john
+  net user pentuser
   net localgroup Administrators
 
   # System info

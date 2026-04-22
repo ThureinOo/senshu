@@ -5,14 +5,14 @@ description: |
 
   Reference values:
     Target IP: 10.10.10.1
-    Username: john
-    Password: password123
+    Username: pentuser
+    Password: P@ssw0rd123
 command: |
   # Null session
   rpcclient -U "" -N 10.10.10.1
 
   # Authenticated
-  rpcclient -U "john%password123" 10.10.10.1
+  rpcclient -U "pentuser%P@ssw0rd123" 10.10.10.1
 
   # Useful rpcclient commands:
   # enumdomusers        — list domain users

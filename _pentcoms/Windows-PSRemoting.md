@@ -4,19 +4,19 @@ description: |
   tool — no additional binaries needed.
 command: |
   # Enter interactive session
-  Enter-PSSession -ComputerName 10.10.10.1 -Credential test.local\john
+  Enter-PSSession -ComputerName 10.10.10.1 -Credential test.local\pentuser
 
   # Execute command on remote host
-  Invoke-Command -ComputerName 10.10.10.1 -Credential test.local\john -ScriptBlock { whoami }
+  Invoke-Command -ComputerName 10.10.10.1 -Credential test.local\pentuser -ScriptBlock { whoami }
 
   # Execute on multiple hosts
-  Invoke-Command -ComputerName dc01,srv01,srv02 -Credential test.local\john -ScriptBlock { hostname }
+  Invoke-Command -ComputerName dc01,srv01,srv02 -Credential test.local\pentuser -ScriptBlock { hostname }
 
   # Execute script file
-  Invoke-Command -ComputerName 10.10.10.1 -Credential test.local\john -FilePath C:\Tools\script.ps1
+  Invoke-Command -ComputerName 10.10.10.1 -Credential test.local\pentuser -FilePath C:\Tools\script.ps1
 
   # Persistent session
-  $sess = New-PSSession -ComputerName 10.10.10.1 -Credential test.local\john
+  $sess = New-PSSession -ComputerName 10.10.10.1 -Credential test.local\pentuser
   Invoke-Command -Session $sess -ScriptBlock { whoami }
   Copy-Item -Path C:\Tools\file.exe -Destination C:\Temp\ -ToSession $sess
 phase:

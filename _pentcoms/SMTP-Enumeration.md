@@ -10,7 +10,7 @@ command: |
 
   # Manual enumeration via telnet
   telnet 10.10.10.1 25
-  VRFY john
+  VRFY pentuser
   EXPN admin
 
   # Nmap scripts

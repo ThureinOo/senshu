@@ -4,11 +4,11 @@ description: |
 
   Reference values:
     Target IP: 10.10.10.1
-    Username: john
-    Password: password123
+    Username: pentuser
+    Password: P@ssw0rd123
 command: |
   # Connect
-  mysql -h 10.10.10.1 -u john -p'password123'
+  mysql -h 10.10.10.1 -u pentuser -p'P@ssw0rd123'
 
   # Enumerate databases
   SHOW DATABASES;

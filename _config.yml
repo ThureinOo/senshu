@@ -1,6 +1,6 @@
 ---
-title: PentComs
-baseurl: /pentcoms
+title: Senshu
+baseurl: /senshu
 
 exclude: ['/scripts', '/Gemfile', '/Makefile', '/README.md']
 

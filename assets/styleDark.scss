@@ -43,6 +43,12 @@ body {
     width: 40px;
     height: 40px;
     filter: brightness(1.2);
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 h1#page-title {
@@ -76,7 +82,7 @@ a {
     &:hover { color: #ff8787; text-decoration: underline; }
 }
 
-.page-content > p {
+.home-description {
     text-align: center;
     margin-bottom: 25px;
     color: $muted;
@@ -199,6 +205,39 @@ a {
     color: $text;
     transition: border-color 0.2s;
     &:focus { border-color: $green; }
+}
+
+// Content tables (filters, items pages)
+.page-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+
+    th {
+        text-align: left;
+        padding: 10px 20px;
+        border-bottom: 2px solid $border;
+        font-size: 0.85em;
+        text-transform: uppercase;
+        color: $muted;
+        letter-spacing: 0.5px;
+    }
+
+    td {
+        padding: 8px 20px;
+        border-bottom: 1px solid $border;
+        vertical-align: top;
+    }
+
+    td:first-child {
+        width: 180px;
+        white-space: nowrap;
+        padding-right: 40px;
+    }
+
+    tr:hover {
+        background: $darker;
+    }
 }
 
 #bin-table-wrapper { overflow-x: auto; }

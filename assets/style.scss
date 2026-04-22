@@ -42,6 +42,12 @@ body {
 .logo-icon {
     width: 40px;
     height: 40px;
+    animation: spin 4s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 h1#page-title {
@@ -73,11 +79,11 @@ h1#page-title {
 a {
     color: $accent;
     text-decoration: none;
-    &:hover { color: darken($accent, 10%); text-decoration: underline; }
+    &:hover { color: #c0392b; text-decoration: underline; }
 }
 
-// Description paragraph
-.page-content > p {
+// Homepage description (only)
+.home-description {
     text-align: center;
     margin-bottom: 25px;
     color: $muted;
@@ -198,6 +204,39 @@ a {
     outline: none;
     transition: border-color 0.2s;
     &:focus { border-color: $green; }
+}
+
+// Content tables (filters, items pages)
+.page-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+
+    th {
+        text-align: left;
+        padding: 10px 20px;
+        border-bottom: 2px solid $border;
+        font-size: 0.85em;
+        text-transform: uppercase;
+        color: $muted;
+        letter-spacing: 0.5px;
+    }
+
+    td {
+        padding: 8px 20px;
+        border-bottom: 1px solid #e8e8e8;
+        vertical-align: top;
+    }
+
+    td:first-child {
+        width: 180px;
+        white-space: nowrap;
+        padding-right: 40px;
+    }
+
+    tr:hover {
+        background: #f9f9f9;
+    }
 }
 
 // Command table

@@ -6,11 +6,11 @@ description: |
   Reference values:
     Target DC: 10.10.10.1
     Domain: test.local
-    Username: john
-    Password: password123
+    Username: pentuser
+    Password: P@ssw0rd123
 command: |
   # bloodhound-python (from Linux)
-  bloodhound-python -u john -p 'password123' -d test.local -ns 10.10.10.1 -c All
+  bloodhound-python -u pentuser -p 'P@ssw0rd123' -d test.local -ns 10.10.10.1 -c All
 
   # SharpHound (from Windows)
   .\SharpHound.exe -c All --domain test.local

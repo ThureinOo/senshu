@@ -1,7 +1,7 @@
 ---
 description: |
-  Check WinRM access and execute commands across multiple hosts
-  using CrackMapExec/NetExec.
+  NetExec WinRM module — check access, execute commands,
+  and spray credentials over WinRM.
 
   Reference values:
     Target IP: 10.10.10.1
@@ -9,16 +9,16 @@ description: |
     Password: P@ssw0rd123
 command: |
   # Check WinRM access
-  crackmapexec winrm 10.10.10.1 -u pentuser -p 'P@ssw0rd123'
+  nxc winrm 10.10.10.1 -u pentuser -p 'P@ssw0rd123'
 
   # Execute command
-  crackmapexec winrm 10.10.10.1 -u pentuser -p 'P@ssw0rd123' -x "whoami"
+  nxc winrm 10.10.10.1 -u pentuser -p 'P@ssw0rd123' -x "whoami"
+
+  # PowerShell command
+  nxc winrm 10.10.10.1 -u pentuser -p 'P@ssw0rd123' -X "Get-Process"
 
   # With hash
-  crackmapexec winrm 10.10.10.1 -u pentuser -H aad3b435b51404eeaad3b435b51404ee -x "whoami"
-
-  # Across a subnet
-  crackmapexec winrm 10.10.10.0/24 -u pentuser -p 'P@ssw0rd123'
+  nxc winrm 10.10.10.1 -u pentuser -H aad3b435b51404eeaad3b435b51404ee
 phase:
   - Enumeration
   - Lateral_Movement

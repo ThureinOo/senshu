@@ -1,62 +1,82 @@
 # Active Directory Techniques
 - id: Kerberoasting
   label: Kerberoasting
+  description: Requesting TGS tickets for SPNs and cracking them offline.
 
 - id: AS-REP_Roasting
   label: AS-REP Roasting
+  description: Extracting AS-REP hashes for accounts without pre-authentication.
 
 - id: Pass-the-Hash_Ticket
   label: Pass-the-Hash/Ticket
+  description: Authenticating with an NTLM hash or stolen Kerberos ticket.
 
 - id: Ticket_Forgery
   label: Ticket Forgery
+  description: Forging Golden Tickets (TGT) or Silver Tickets (TGS) for persistence.
 
 - id: DCSync
   label: DCSync
+  description: Replicating AD credentials using Directory Replication Service.
 
 - id: NTLM_Relay_Poisoning
   label: NTLM Relay/Poisoning
+  description: Capturing and relaying NTLM authentication via LLMNR/NBT-NS poisoning.
 
 - id: BloodHound
   label: BloodHound
+  description: Collecting AD relationship data for attack path analysis.
 
 - id: Password_Spraying
   label: Password Spraying
+  description: Trying common passwords against many accounts to find valid credentials.
 
 - id: Delegation_Abuse
   label: Delegation Abuse
+  description: Abusing unconstrained, constrained, or resource-based constrained delegation.
 
 - id: ACL_Abuse
   label: ACL Abuse
+  description: Exploiting misconfigured AD access control lists for privilege escalation.
 
 - id: ADCS_Abuse
   label: ADCS Abuse
+  description: Exploiting Active Directory Certificate Services misconfigurations.
 
 - id: Shadow_Credentials
   label: Shadow Credentials
+  description: Adding Key Credentials to an AD object for alternative authentication.
 
 # Web Techniques
 - id: Web_Injection
   label: Web Injection
+  description: SQL injection, command injection, SSRF, and other server-side injection attacks.
 
 - id: Web_File_Attack
   label: Web File Attack
+  description: LFI/RFI, file upload bypass, and path traversal attacks.
 
 - id: Deserialization
   label: Deserialization
+  description: Exploiting insecure deserialization for remote code execution.
 
 # General Techniques
 - id: Reverse_Shell
   label: Reverse Shell
+  description: Establishing a reverse connection back to the attacker machine.
 
 - id: Pivoting_Tunneling
   label: Pivoting/Tunneling
+  description: Port forwarding and tunneling through compromised hosts to reach internal networks.
 
 - id: Token_Impersonation
   label: Token Impersonation
+  description: Impersonating another user's security token for privilege escalation.
 
 - id: Linux_Misconfig
   label: Linux Misconfig
+  description: Exploiting SUID binaries, sudo misconfigs, cron jobs, and writable paths.
 
 - id: Kernel_Exploit
   label: Kernel Exploit
+  description: Exploiting kernel vulnerabilities for local privilege escalation.
