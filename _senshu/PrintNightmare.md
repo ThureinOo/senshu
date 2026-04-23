@@ -34,7 +34,7 @@ target_os:
 services:
   - SMB
 techniques:
-  - Kernel_Exploit
+  - CVE_Exploit
 references:
   - https://github.com/cube0x0/CVE-2021-1675
   - https://github.com/calebstewart/CVE-2021-1675

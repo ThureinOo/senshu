@@ -24,7 +24,7 @@ target_os:
 services:
   - RPC
 techniques:
-  - Kernel_Exploit
+  - CVE_Exploit
 references:
   - https://github.com/dirkjanm/CVE-2020-1472
   - https://github.com/SecuraBV/CVE-2020-1472

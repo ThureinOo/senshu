@@ -85,9 +85,6 @@
 - id: AlwaysInstallElevated
   label: AlwaysInstallElevated
 
-- id: AutoRun_Exploit
-  label: AutoRun Exploit
-
 - id: Kernel_Exploit
   label: Kernel Exploit
 
@@ -155,3 +152,34 @@
 
 - id: Python_Hijack
   label: Python Hijack
+
+# Additional Web Techniques
+- id: XSS
+  label: XSS
+
+- id: Open_Redirect
+  label: Open Redirect
+
+- id: Request_Smuggling
+  label: Request Smuggling
+
+# Additional AD Techniques
+- id: CVE_Exploit
+  label: CVE Exploit
+
+- id: RBCD
+  label: RBCD
+
+# Additional Windows Techniques
+- id: AMSI_Bypass
+  label: AMSI Bypass
+
+- id: AppLocker_Bypass
+  label: AppLocker Bypass
+
+- id: AV_Evasion
+  label: AV Evasion
+
+# Additional Linux Techniques
+- id: Writable_Service
+  label: Writable Service

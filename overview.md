@@ -74,16 +74,19 @@ Technique buttons appear **dynamically** based on your other filter selections. 
 Full technique list:
 
 **Web Techniques:**
-SQLi, LFI/RFI, Command Injection, File Upload, NoSQL Injection, XXE, SSRF, SSTI, Deserialization, IDOR, JWT Attack, API Testing, CORS Misconfig, WebSocket Attack
+SQLi, LFI/RFI, Command Injection, File Upload, NoSQL Injection, XXE, SSRF, SSTI, Deserialization, IDOR, JWT Attack, API Testing, CORS Misconfig, WebSocket Attack, XSS, Open Redirect, Request Smuggling
 
 **AD / Network Techniques:**
-Kerberoasting, AS-REP Roasting, Pass-the-Hash, Pass-the-Ticket, NTLM Relay/Poisoning, DCSync, BloodHound, Password Spraying, ACL Abuse, ADCS Abuse, Shadow Credentials, Delegation Abuse, Ticket Forgery, GPP Passwords, LAPS Abuse, DNS Admin Abuse
+Kerberoasting, AS-REP Roasting, Pass-the-Hash, Pass-the-Ticket, NTLM Relay/Poisoning, DCSync, BloodHound, Password Spraying, ACL Abuse, ADCS Abuse, Shadow Credentials, Delegation Abuse, Ticket Forgery, GPP Passwords, LAPS Abuse, DNS Admin Abuse, CVE Exploit, RBCD
+
+**Windows Post-Exploitation Techniques:**
+AMSI Bypass, AppLocker Bypass, AV Evasion
 
 **Windows Privilege Escalation Techniques:**
-Service Exploit, Registry Exploit, UAC Bypass, DLL Hijack, Token Impersonation, AlwaysInstallElevated, AutoRun Exploit, Kernel Exploit
+Service Exploit, Registry Exploit, UAC Bypass, DLL Hijack, Token Impersonation, AlwaysInstallElevated, Kernel Exploit
 
 **Linux Privilege Escalation Techniques:**
-SUID Abuse, Sudo Abuse, Cron Abuse, Capability Abuse, NFS Abuse, Kernel Exploit, Docker Escape, Wildcard Injection, LD_PRELOAD, Python Hijack
+SUID Abuse, Sudo Abuse, Cron Abuse, Capability Abuse, NFS Abuse, Kernel Exploit, Docker Escape, Wildcard Injection, LD_PRELOAD, Python Hijack, Writable Service
 
 **macOS Privilege Escalation Techniques:**
 TCC Bypass, Dylib Hijack, LaunchDaemon Abuse
@@ -119,15 +122,16 @@ When you apply a "What you have" filter on the main page, only the matching comm
 | Reconnaissance | 3 | Phase: Reconnaissance |
 | Service Enumeration | 19 | Phase: Enumeration + Service |
 | Service Exploitation | 12 | Phase: Exploitation + Service |
-| HTTP Exploitation (by technique) | 14 | Phase: Exploitation + Service: HTTP + Technique |
-| AD / Network Techniques | 19 | Technique filter |
+| HTTP Exploitation (by technique) | 17 | Phase: Exploitation + Service: HTTP + Technique |
+| AD / Network Techniques | 24 | Technique filter |
 | Windows Privilege Escalation | 7 | Phase: PrivEsc + OS: Windows + Technique |
-| Linux Privilege Escalation | 9 | Phase: PrivEsc + OS: Linux + Technique |
+| Windows Post-Exploitation | 7 | Phase: Post-Exploitation + OS: Windows |
+| Linux Privilege Escalation | 10 | Phase: PrivEsc + OS: Linux + Technique |
 | macOS Privilege Escalation | 3 | Phase: PrivEsc + OS: macOS + Technique |
 | Post-Exploitation (by OS) | 4 | Phase: Post-Exploitation + OS |
-| Persistence (by OS) | 3 | Phase: Persistence + OS |
-| General / Utility | 12 | Phase + search |
-| **Total** | **105** | |
+| Persistence (by OS) | 4 | Phase: Persistence + OS |
+| General / Utility | 14 | Phase + search |
+| **Total** | **118** | |
 
 ---
 

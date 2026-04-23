@@ -22,7 +22,7 @@ target_os:
 services:
   - Kerberos
 techniques:
-  - Kerberoasting
+  - CVE_Exploit
 references:
   - https://github.com/Ridter/noPac
   - https://book.hacktricks.wiki/en/windows-hardening/active-directory-methodology/samaccountname-spoofing.html

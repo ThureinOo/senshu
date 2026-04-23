@@ -240,10 +240,14 @@ a {
 }
 
 // Command table
-#bin-table-wrapper { overflow-x: auto; }
+#bin-table-wrapper {
+    overflow-x: hidden;
+    max-width: 100%;
+}
 
 #bin-table {
     width: 100%;
+    table-layout: fixed;
     border-collapse: collapse;
 }
 
@@ -326,13 +330,18 @@ a {
         border: 1px solid $border;
         border-radius: 4px;
         padding: 10px 14px;
-        overflow-x: auto;
         margin: 0;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        overflow-x: hidden;
     }
     code {
         font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
         font-size: 0.85em;
         color: $text;
+        white-space: pre-wrap;
+        word-wrap: break-word;
     }
 }
 
