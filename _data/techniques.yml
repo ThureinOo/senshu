@@ -1,185 +1,125 @@
-# Web Techniques
-- id: SQLi
-  label: SQL Injection
-
-- id: LFI_RFI
-  label: LFI/RFI
-
-- id: Command_Injection
-  label: Command Injection
-
-- id: File_Upload
-  label: File Upload
-
-- id: NoSQL_Injection
-  label: NoSQL Injection
-
-- id: XXE
-  label: XXE
-
-- id: SSRF
-  label: SSRF
-
-- id: SSTI
-  label: SSTI
-
-- id: Deserialization
-  label: Deserialization
-
-# AD / Network Techniques
-- id: Kerberoasting
-  label: Kerberoasting
-
-- id: AS-REP_Roasting
-  label: AS-REP Roasting
-
-- id: Pass-the-Hash
-  label: Pass-the-Hash
-
-- id: Pass-the-Ticket
-  label: Pass-the-Ticket
-
-- id: NTLM_Relay
-  label: NTLM Relay
-
-- id: DCSync
-  label: DCSync
-
-- id: BloodHound
-  label: BloodHound
-
-- id: Password_Spraying
-  label: Password Spraying
-
-- id: ACL_Abuse
-  label: ACL Abuse
-
-- id: ADCS_Abuse
-  label: ADCS Abuse
-
-- id: Shadow_Credentials
-  label: Shadow Credentials
-
-- id: Delegation_Abuse
-  label: Delegation Abuse
-
-- id: Ticket_Forgery
-  label: Ticket Forgery
-
-# Windows PrivEsc Techniques
-- id: Service_Exploit
-  label: Service Exploit
-
-- id: Registry_Exploit
-  label: Registry Exploit
-
-- id: UAC_Bypass
-  label: UAC Bypass
-
-- id: DLL_Hijack
-  label: DLL Hijack
-
-- id: Token_Impersonation
-  label: Token Impersonation
-
-- id: AlwaysInstallElevated
-  label: AlwaysInstallElevated
-
-- id: Kernel_Exploit
-  label: Kernel Exploit
-
-# Linux PrivEsc Techniques
-- id: SUID_Abuse
-  label: SUID Abuse
-
-- id: Sudo_Abuse
-  label: Sudo Abuse
-
-- id: Cron_Abuse
-  label: Cron Abuse
-
-- id: Capability_Abuse
-  label: Capability Abuse
-
-- id: NFS_Abuse
-  label: NFS Abuse
-
-# macOS PrivEsc Techniques
-- id: TCC_Bypass
-  label: TCC Bypass
-
-- id: Dylib_Hijack
-  label: Dylib Hijack
-
-- id: LaunchDaemon_Abuse
-  label: LaunchDaemon Abuse
-
-# Web Techniques (additional)
-- id: IDOR
-  label: IDOR
-
-- id: JWT_Attack
-  label: JWT Attack
-
-- id: API_Testing
-  label: API Testing
-
-- id: CORS_Misconfiguration
-  label: CORS Misconfig
-
-- id: WebSocket_Attack
-  label: WebSocket Attack
-
-# AD Techniques (additional)
-- id: GPP_Passwords
-  label: GPP Passwords
-
-- id: LAPS_Abuse
-  label: LAPS Abuse
-
-- id: DNS_Admin_Abuse
-  label: DNS Admin Abuse
-
-# Linux PrivEsc Techniques (additional)
-- id: Docker_Escape
-  label: Docker Escape
-
-- id: Wildcard_Injection
-  label: Wildcard Injection
-
-- id: LD_PRELOAD
-  label: LD_PRELOAD
-
-- id: Python_Hijack
-  label: Python Hijack
-
-# Additional Web Techniques
+# Web
 - id: XSS
   label: XSS
-
+- id: SQLi
+  label: SQL Injection
+- id: Command_Injection
+  label: Command Injection
+- id: SSRF
+  label: SSRF
+- id: LFI_RFI
+  label: LFI/RFI
+- id: SSTI
+  label: SSTI
+- id: File_Upload
+  label: File Upload
+- id: IDOR
+  label: IDOR
+- id: XXE
+  label: XXE
+- id: Deserialization
+  label: Deserialization
+- id: NoSQL_Injection
+  label: NoSQL Injection
+- id: JWT_Attack
+  label: JWT Attack
+- id: API_Testing
+  label: API Testing
+- id: CORS_Misconfiguration
+  label: CORS Misconfig
 - id: Open_Redirect
   label: Open Redirect
-
+- id: WebSocket_Attack
+  label: WebSocket Attack
 - id: Request_Smuggling
   label: Request Smuggling
 
-# Additional AD Techniques
-- id: CVE_Exploit
-  label: CVE Exploit
-
-- id: RBCD
-  label: RBCD
-
-# Additional Windows Techniques
+# Windows PrivEsc
+- id: Token_Impersonation
+  label: Token Impersonation
+- id: Service_Exploit
+  label: Service Exploit
+- id: DLL_Hijack
+  label: DLL Hijack
+- id: UAC_Bypass
+  label: UAC Bypass
+- id: Kernel_Exploit
+  label: Kernel Exploit
+- id: Registry_Exploit
+  label: Registry Exploit
+- id: AlwaysInstallElevated
+  label: AlwaysInstallElevated
 - id: AMSI_Bypass
   label: AMSI Bypass
-
 - id: AppLocker_Bypass
   label: AppLocker Bypass
-
 - id: AV_Evasion
   label: AV Evasion
 
-# Additional Linux Techniques
+# Linux PrivEsc
+- id: SUID_Abuse
+  label: SUID Abuse
+- id: Sudo_Abuse
+  label: Sudo Abuse
+- id: Cron_Abuse
+  label: Cron Abuse
+- id: Capability_Abuse
+  label: Capability Abuse
+- id: Docker_Escape
+  label: Docker Escape
+- id: Wildcard_Injection
+  label: Wildcard Injection
+- id: LD_PRELOAD
+  label: LD_PRELOAD
+- id: Python_Hijack
+  label: Python Hijack
+- id: NFS_Abuse
+  label: NFS Abuse
 - id: Writable_Service
   label: Writable Service
+
+# macOS PrivEsc
+- id: TCC_Bypass
+  label: TCC Bypass
+- id: Dylib_Hijack
+  label: Dylib Hijack
+- id: LaunchDaemon_Abuse
+  label: LaunchDaemon Abuse
+
+# AD / Network
+- id: Kerberoasting
+  label: Kerberoasting
+- id: AS-REP_Roasting
+  label: AS-REP Roasting
+- id: Pass-the-Hash
+  label: Pass-the-Hash
+- id: NTLM_Relay
+  label: NTLM Relay
+- id: DCSync
+  label: DCSync
+- id: Pass-the-Ticket
+  label: Pass-the-Ticket
+- id: BloodHound
+  label: BloodHound
+- id: Password_Spraying
+  label: Password Spraying
+- id: ACL_Abuse
+  label: ACL Abuse
+- id: ADCS_Abuse
+  label: ADCS Abuse
+- id: RBCD
+  label: RBCD
+- id: Delegation_Abuse
+  label: Delegation Abuse
+- id: Shadow_Credentials
+  label: Shadow Credentials
+- id: Ticket_Forgery
+  label: Ticket Forgery
+- id: GPP_Passwords
+  label: GPP Passwords
+- id: LAPS_Abuse
+  label: LAPS Abuse
+- id: DNS_Admin_Abuse
+  label: DNS Admin Abuse
+- id: CVE_Exploit
+  label: CVE Exploit
