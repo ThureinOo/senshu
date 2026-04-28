@@ -13,6 +13,15 @@ commands:
       nxc smb 10.10.10.27 -u sec_user -p 'P@ssw0rd' --pass-pol
       bloodhound-python -c All -u sec_user -p 'P@ssw0rd' -d senshu.local -ns 10.10.10.27 --zip
 
+      # bloodyAD — enumerate group members
+      bloodyAD -d senshu.local -u sec_user -p 'P@ssw0rd' --host 10.10.10.27 get groupMember "Domain Admins"
+
+      # bloodyAD — find all objects you have write access to
+      bloodyAD -d senshu.local -u sec_user -p 'P@ssw0rd' --host 10.10.10.27 get writable --detail
+
+      # bloodyAD — arbitrary LDAP search
+      bloodyAD -d senshu.local -u sec_user -p 'P@ssw0rd' --host 10.10.10.27 get search --filter '(sAMAccountName=targetuser)'
+
       # PowerView
       Import-Module .\PowerView.ps1
       Get-DomainUser | Select-Object samaccountname, memberof, description
