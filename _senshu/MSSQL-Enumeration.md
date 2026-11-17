@@ -10,6 +10,7 @@ commands:
     cmd: |
       # Connect with Impacket mssqlclient
       impacket-mssqlclient 'sec_user:P@ssw0rd@10.10.10.27'
+      impacket-mssqlclient 'sec_user:P@ssw0rd@10.10.10.27' -windows-auth
 
       # Check SQL Server version
       SQL> SELECT @@version;
